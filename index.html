@@ -63,12 +63,7 @@
             scroll-behavior: smooth;
         }
         
-        /* FAQ Animation Styles */
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        }
+
         
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
@@ -213,46 +208,46 @@
             </div>
       
             <!-- Top 3 Cards -->
-            <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
-              <div class="bg-[#E8F0FE] rounded-2xl p-4 shadow-sm">
+                        <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
+              <div class="bg-[#E8F0FE] rounded-2xl p-4 shadow-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(0)" id="feature-card-0">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Digital Account</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Open your Digital account in minutes with video KYC. Zero paperwork maximum convenience
                 </p>
               </div>
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm">
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(1)" id="feature-card-1">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">UPI Payments</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Lightning fast UPI transactions. Pay anyone, anywhere, anytime with just a tap
                 </p>
               </div>
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm">
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(2)" id="feature-card-2">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Mobile Recharge</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Instant mobile and DTH recharge with exclusive cashback offers and rewards
                 </p>
               </div>
-            </div>
+                    </div>
           </div>
       
           <!-- ROW 2: Bottom 3 Cards + Scrollbar + Right Phone -->
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 items-stretch min-h-[400px]">
             
             <!-- Bottom 3 Cards -->
-            <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm">
+                        <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(3)" id="feature-card-3">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Smart Fixed Deposits</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Grow your money with high interest FDs. Flexible tenures and easy premature withdrawal.
                 </p>
               </div>
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm">
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(4)" id="feature-card-4">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Agent Program</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Earn commissions by helping others join FinZo. Build your network and grow your income.
                 </p>
-              </div>
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm">
+                    </div>
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(5)" id="feature-card-5">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Bank level Security</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Multi-layer security with biometric authentication and real-time fraud detection.
@@ -283,12 +278,12 @@
         <div class="container mx-auto px-6 max-w-7xl">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <div class="flex justify-center items-center space-x-4 mb-4 ">
-                                    <div class="font-sf-pro text-2xl md:text-4xl lg:text-5xl font-bold flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-8">
-                    <span>• Secure</span>
-                    <span>• Fast</span>
-                    <span>• Simple</span>
-                </div>
+                                <div class="flex justify-center items-center space-x-4 mb-4">
+                    <div class="font-sf-pro text-2xl md:text-4xl lg:text-5xl font-bold flex flex-row items-center justify-center space-x-4 md:space-x-8">
+                        <span>• Secure</span>
+                        <span>• Fast</span>
+                        <span>• Simple</span>
+                    </div>
                 </div>
                 <h2 class="text-xl md:text-2xl lg:text-3xl font-sf-pro font-semibold text-gray-600 mb-4">Experience the future of banking with our intuitive and elegant mobile app</h2>
             </div>
@@ -296,14 +291,14 @@
             <!-- Phone Screens Carousel -->
             <div class="relative">
                 <!-- Phone Screens Container -->
-                <div class="flex justify-center items-center space-x-2 md:space-x-4 overflow-hidden pb-8" id="carousel-container">
-                    <img src="assets/screen-1.svg" alt="App Screen 1" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="assets/screen-2.svg" alt="App Screen 2" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="assets/screen-3.svg" alt="App Screen 3" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-100 opacity-100">
-                    <img src="assets/screen-4.svg" alt="App Screen 4" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="assets/screen-5.svg" alt="App Screen 5" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="assets/screen-6.svg" alt="App Screen 6" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                </div>
+                                <div class="flex justify-center items-center space-x-2 md:space-x-4 overflow-hidden pb-8" id="carousel-container">
+                    <img src="assets/Screen-1.svg" alt="App Screen 1" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
+                    <img src="assets/Screen-2.svg" alt="App Screen 2" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
+                    <img src="assets/Screen-3.svg" alt="App Screen 3" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-100 opacity-100">
+                    <img src="assets/Screen-4.svg" alt="App Screen 4" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
+                    <img src="assets/Screen-5.svg" alt="App Screen 5" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
+                    <img src="assets/Screen-6.svg" alt="App Screen 6" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
+                    </div>
                 
                 <!-- Carousel Dots -->
                 <div class="flex justify-center space-x-2 mt-8">
@@ -495,8 +490,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-0">
-                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden" id="answer-0">
+                        <p class="text-gray-700 font-sf-pro leading-relaxed">FinZo uses bank-grade security protocols including 256-bit SSL encryption, biometric authentication, and real-time fraud detection. We're regulated by RBI and your money is insured up to ₹5 lakhs under DICGC. All transactions are monitored 24/7 for suspicious activity.</p>
                     </div>
                 </div>
                 
@@ -508,8 +503,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-1">
-                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden" id="answer-1">
+                        <p class="text-gray-700 font-sf-pro leading-relaxed">Opening a FinZo account takes just 5 minutes! Download our app, complete video KYC with your Aadhaar, and your account will be activated instantly. No paperwork, no branch visits, and no waiting time. You can start using all features immediately after verification.</p>
                     </div>
                 </div>
                 
@@ -521,8 +516,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-2">
-                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden" id="answer-2">
+                        <p class="text-gray-700 font-sf-pro leading-relaxed">UPI transactions are completely free with FinZo! No charges for UPI transfers, bill payments, or mobile recharges. We believe in transparent banking with zero hidden fees. You only pay for premium services like international transfers or express delivery.</p>
                     </div>
                 </div>
                 
@@ -535,7 +530,7 @@
                         </svg>
                     </div>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-3">
-                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                        <p class="text-gray-700 font-sf-pro leading-relaxed">FinZo offers competitive FD rates starting from 7.5% for 12 months to 8.5% for 36 months. Rates vary based on tenure and amount. We offer flexible tenures from 7 days to 10 years, with premature withdrawal options and automatic renewal features.</p>
                     </div>
                 </div>
                 
@@ -548,7 +543,7 @@
                         </svg>
                     </div>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-4">
-                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                        <p class="text-gray-700 font-sf-pro leading-relaxed">The Agent Program lets you earn commissions by helping others join FinZo. Share your referral code, and earn ₹500 for each successful account opening. Build your network, earn passive income, and help others access better banking. No investment required - just share and earn!</p>
                     </div>
                 </div>
                 
@@ -561,7 +556,7 @@
                         </svg>
                     </div>
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-5">
-                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                        <p class="text-gray-700 font-sf-pro leading-relaxed">Yes! FinZo supports international transactions through our partnership with leading banks. You can send money abroad, receive international payments, and use your virtual card for global purchases. Competitive exchange rates and low transfer fees make international banking seamless.</p>
                     </div>
                 </div>
             </div>
@@ -792,9 +787,6 @@
                 if (i !== index) {
                     const otherAnswer = document.getElementById(`answer-${i}`);
                     const otherArrow = document.getElementById(`arrow-${i}`);
-                    otherAnswer.style.maxHeight = '0px';
-                    otherAnswer.style.opacity = '0';
-                    otherAnswer.style.padding = '0px';
                     otherAnswer.classList.add('hidden');
                     otherArrow.classList.remove('rotate-180');
                 }
@@ -803,21 +795,32 @@
             // Toggle current FAQ
             if (answer.classList.contains('hidden')) {
                 answer.classList.remove('hidden');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                answer.style.opacity = '1';
-                answer.style.padding = '24px';
                 arrow.classList.add('rotate-180');
                 activeFAQ = index;
             } else {
-                answer.style.maxHeight = '0px';
-                answer.style.opacity = '0';
-                answer.style.padding = '0px';
-                setTimeout(() => {
-                    answer.classList.add('hidden');
-                }, 300);
+                answer.classList.add('hidden');
                 arrow.classList.remove('rotate-180');
                 activeFAQ = -1;
             }
+        }
+        
+        // Feature Cards functionality
+        let activeFeatureCard = 0; // First card is active by default
+        
+        function toggleFeatureCard(index) {
+            // Reset all cards to white
+            for (let i = 0; i < 6; i++) {
+                const card = document.getElementById(`feature-card-${i}`);
+                card.classList.remove('bg-[#E8F0FE]');
+                card.classList.add('bg-white', 'border', 'border-[#D9D9D9]');
+            }
+            
+            // Make clicked card blue
+            const clickedCard = document.getElementById(`feature-card-${index}`);
+            clickedCard.classList.remove('bg-white', 'border', 'border-[#D9D9D9]');
+            clickedCard.classList.add('bg-[#E8F0FE]');
+            
+            activeFeatureCard = index;
         }
     </script>
 </body>
