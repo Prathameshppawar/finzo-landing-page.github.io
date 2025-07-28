@@ -61,6 +61,13 @@
             scroll-behavior: smooth;
         }
         
+        /* FAQ Animation Styles */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        
 
     </style>
 </head>
@@ -418,27 +425,91 @@
     </section>
 
     <!-- FAQs Section -->
-    <section id="faqs" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-6">
+    <section id="faqs" class="py-20" style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%);">
+        <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Frequently Asked Questions</h2>
-                <p class="text-xl text-gray-600 font-sf-pro">Find answers to common questions about FinZo</p>
+                <p class="text-xl text-gray-600 font-sf-pro mb-2">Got questions? We've got answers.</p>
+                <p class="text-lg text-gray-600 font-sf-pro">Everything you need to know about FinZo</p>
             </div>
             
-            <div class="max-w-3xl mx-auto space-y-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-2">How do I create a FinZo account?</h3>
-                    <p class="text-gray-700 font-sf-pro">Download our app, provide your KYC details, and get your account activated within minutes.</p>
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow" onclick="toggleFAQ(0)">
+                        <h3 class="text-lg font-sf-pro font-semibold text-gray-800">How secure is FinZo?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="arrow-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-0">
+                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-2">Is FinZo safe and secure?</h3>
-                    <p class="text-gray-700 font-sf-pro">Yes, we use bank-grade security protocols and are regulated by RBI. Your money is completely safe with us.</p>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow" onclick="toggleFAQ(1)">
+                        <h3 class="text-lg font-sf-pro font-semibold text-gray-800">How long does it take to open an account?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="arrow-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-1">
+                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-2">What are the charges for UPI transfers?</h3>
-                    <p class="text-gray-700 font-sf-pro">UPI transfers are completely free with FinZo. No hidden charges or transaction fees.</p>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow" onclick="toggleFAQ(2)">
+                        <h3 class="text-lg font-sf-pro font-semibold text-gray-800">Are there any charges for UPI transactions?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="arrow-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-2">
+                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow" onclick="toggleFAQ(3)">
+                        <h3 class="text-lg font-sf-pro font-semibold text-gray-800">What interest rates do you offer on Fixed Deposit?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="arrow-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-3">
+                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow" onclick="toggleFAQ(4)">
+                        <h3 class="text-lg font-sf-pro font-semibold text-gray-800">How does the Agent Program work?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="arrow-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-4">
+                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex justify-between items-center cursor-pointer hover:shadow-md transition-shadow" onclick="toggleFAQ(5)">
+                        <h3 class="text-lg font-sf-pro font-semibold text-gray-800">Can I use FinZo for international transactions?</h3>
+                        <svg class="w-5 h-5 text-gray-500 transform transition-transform" id="arrow-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ml-4 mt-2 hidden transform transition-all duration-300 ease-in-out" id="answer-5">
+                        <p class="text-gray-700 font-sf-pro">Answer</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -547,6 +618,43 @@
         
         // Initialize carousel
         updateCarousel();
+        
+        // FAQ Accordion functionality
+        let activeFAQ = -1;
+        
+        function toggleFAQ(index) {
+            const answer = document.getElementById(`answer-${index}`);
+            const arrow = document.getElementById(`arrow-${index}`);
+            
+            // Close all other FAQs
+            for (let i = 0; i < 6; i++) {
+                if (i !== index) {
+                    const otherAnswer = document.getElementById(`answer-${i}`);
+                    const otherArrow = document.getElementById(`arrow-${i}`);
+                    otherAnswer.style.maxHeight = '0px';
+                    otherAnswer.style.opacity = '0';
+                    otherAnswer.classList.add('hidden');
+                    otherArrow.classList.remove('rotate-180');
+                }
+            }
+            
+            // Toggle current FAQ
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                answer.style.opacity = '1';
+                arrow.classList.add('rotate-180');
+                activeFAQ = index;
+            } else {
+                answer.style.maxHeight = '0px';
+                answer.style.opacity = '0';
+                setTimeout(() => {
+                    answer.classList.add('hidden');
+                }, 300);
+                arrow.classList.remove('rotate-180');
+                activeFAQ = -1;
+            }
+        }
     </script>
 </body>
 </html> 
