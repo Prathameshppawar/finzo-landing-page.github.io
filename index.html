@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinZo - Experience Seamless Banking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=SF+Pro+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'archivo': ['Archivo Black', 'sans-serif'],
+                        'sf-pro': ['SF Pro Display', 'sans-serif']
+                    },
+                    colors: {
+                        'finzo-green': '#296b25',
+                        'finzo-blue': '#1c274c',
+                        'light-blue': '#f0f8ff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(41, 107, 37, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(41, 107, 37, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-light-blue grid-pattern min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold text-finzo-green font-archivo">
+                FinZo
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">Features</a>
+                <a href="#app" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">App</a>
+                <a href="#reviews" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">Reviews</a>
+                <a href="#faqs" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">FAQs</a>
+                <a href="#contact" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+            <!-- Left Content -->
+            <div class="lg:w-1/2 mb-12 lg:mb-0">
+                <!-- Main Headline -->
+                <h1 class="text-5xl lg:text-6xl font-archivo font-normal leading-tight text-finzo-blue mb-6 tracking-wide">
+                    Experience Seamless Banking with 
+                    <span class="text-finzo-green">FinZo</span>
+                </h1>
+                
+                <!-- Description -->
+                <p class="text-xl text-gray-700 font-sf-pro font-normal leading-7 mb-8">
+                    Experience seamless UPI payments, instant recharges, smart FDs, and earn through our agent program. Your financial journey starts here.
+                </p>
+                
+                <!-- Call-to-Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-finzo-blue text-white px-8 py-4 rounded-lg font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-finzo-green transition-colors">
+                        Download FinZo
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <button class="border-2 border-finzo-blue text-finzo-blue px-8 py-4 rounded-lg font-sf-pro font-bold text-lg hover:bg-finzo-blue hover:text-white transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Right Content - Phone Mockups -->
+            <div class="lg:w-1/2 relative">
+                <div class="relative">
+                    <!-- Left Phone - Virtual Debit Card -->
+                    <div class="absolute -left-8 top-8 transform rotate-12">
+                        <div class="w-64 h-96 bg-black rounded-3xl p-2 shadow-2xl">
+                            <div class="w-full h-full bg-white rounded-2xl p-4">
+                                <h3 class="text-sm font-sf-pro font-medium text-gray-600 mb-4">VIRTUAL DEBIT CARD</h3>
+                                
+                                <!-- Card -->
+                                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 mb-4 relative">
+                                    <div class="w-12 h-8 bg-blue-500 rounded mb-2"></div>
+                                    <div class="text-sm font-sf-pro font-medium text-gray-700 mb-2">1234 5678 9101 1121</div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs text-gray-600">07/26</span>
+                                        <span class="text-xs font-bold text-blue-600">VISA</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Card Controls -->
+                                <div class="space-y-2 mb-4">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs text-gray-600">Change PIN</span>
+                                        <button class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Change</button>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs text-gray-600">Block Card</span>
+                                        <button class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">Block</button>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xs text-gray-600">Spending Limits</span>
+                                        <button class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded">Manage</button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Card Details -->
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">Card Number</span>
+                                        <span class="text-xs text-gray-700">•••• •••• •••• 1121</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">Expiry Date</span>
+                                        <span class="text-xs text-gray-700">07/26</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-xs text-gray-500">CVV Number</span>
+                                        <span class="text-xs text-gray-700">•••</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Phone - App Home Screen -->
+                    <div class="absolute -right-8 top-16 transform -rotate-6">
+                        <div class="w-64 h-96 bg-black rounded-3xl p-2 shadow-2xl">
+                            <div class="w-full h-full bg-white rounded-2xl p-4">
+                                <!-- Header -->
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <p class="text-xs text-gray-600">Good Morning,</p>
+                                        <p class="text-sm font-sf-pro font-medium text-gray-800">Aniket Anand</p>
+                                    </div>
+                                    <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
+                                </div>
+                                
+                                <!-- Balance -->
+                                <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-4 mb-4 text-white">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-xs">Your Balance</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="text-xl font-sf-pro font-bold">₹ 75,987.45</div>
+                                    <div class="text-xs opacity-80">UPI ID: aniket@finzo</div>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="flex gap-2 mb-4">
+                                    <button class="flex-1 bg-green-500 text-white py-2 rounded-lg text-xs font-sf-pro font-medium">Add Money</button>
+                                    <button class="flex-1 bg-blue-500 text-white py-2 rounded-lg text-xs font-sf-pro font-medium">Send Money</button>
+                                </div>
+                                
+                                <!-- Quick Actions -->
+                                <div class="grid grid-cols-4 gap-2 mb-4">
+                                    <div class="text-center">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
+                                            <span class="text-xs text-blue-600">📱</span>
+                                        </div>
+                                        <span class="text-xs text-gray-600">Recharge</span>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-8 h-8 bg-green-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
+                                            <span class="text-xs text-green-600">💳</span>
+                                        </div>
+                                        <span class="text-xs text-gray-600">Pay Bill</span>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-8 h-8 bg-purple-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
+                                            <span class="text-xs text-purple-600">💰</span>
+                                        </div>
+                                        <span class="text-xs text-gray-600">Fixed Deposit</span>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-8 h-8 bg-orange-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
+                                            <span class="text-xs text-orange-600">📲</span>
+                                        </div>
+                                        <span class="text-xs text-gray-600">UPI</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Promotional Banner -->
+                                <div class="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg p-3 mb-4">
+                                    <div class="text-xs font-sf-pro font-bold text-white mb-1">Get ₹500 Cashback</div>
+                                    <div class="text-xs text-white opacity-90 mb-2">On first FD of ₹10,000 or more</div>
+                                    <button class="bg-white text-orange-500 text-xs px-3 py-1 rounded font-sf-pro font-medium">Start FD</button>
+                                </div>
+                                
+                                <!-- Recent Transactions -->
+                                <div>
+                                    <div class="text-xs font-sf-pro font-medium text-gray-600 mb-2">Recent Transactions</div>
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-xs text-gray-700">Amazon</span>
+                                            <span class="text-xs text-red-600">-₹1,299</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-xs text-gray-700">Salary</span>
+                                            <span class="text-xs text-green-600">+₹45,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
