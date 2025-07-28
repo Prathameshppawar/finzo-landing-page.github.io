@@ -31,6 +31,36 @@
             background-position: center;
         }
         
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #D9D9D9;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #314F95;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1F1F1F;
+        }
+        
+        /* Firefox scrollbar */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #314F95 #D9D9D9;
+            scroll-behavior: smooth;
+        }
+        
+        /* Smooth scrolling for all browsers */
+        html {
+            scroll-behavior: smooth;
+        }
+        
 
     </style>
 </head>
@@ -56,7 +86,7 @@
 
     <!-- Hero Section -->
      <!-- <div class="py-20"></div> -->
-    <section class="container mx-auto px-6 py-32 " style="background-size: 100% 100%; background-position: top center;">
+    <section class="container mx-auto px-6 py-16 " style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%); background-size: 100% 100%; background-position: top center;">
         <!-- Content and Grid Section -->
         <div class="flex flex-col lg:flex-row grid-pattern items-center justify-between">
             <!-- Left Content -->
@@ -76,7 +106,8 @@
             </div>
             
             <!-- Right Content - Empty for now -->
-            <div class="lg:w-1/2">
+            <div class="lg:w-1/2 flex justify-end">
+                <img src="assets/iphone.svg" alt="">
                 <!-- Empty space for future content -->
             </div>
         </div>
@@ -97,40 +128,96 @@
 
     <!-- Features Section -->
     <section id="features" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Why Choose FinZo?</h2>
-                <p class="text-xl text-gray-600 font-sf-pro">Experience the future of banking with our innovative features</p>
-            </div>
+        <div class="container mx-auto px-6 max-w-7xl">
+          <!-- Section Title -->
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-finzo-blue font-sf-pro">
+              Explore Our Innovative Financial Solutions
+            </h2>
+            <p class="text-gray-600 text-lg font-sf-pro mt-2">
+              From everyday payments to smart investments, FinZo offers a complete financial ecosystem designed for modern India.
+            </p>
+          </div>
+      
+          <!-- ROW 1: Phones + Scrollbar + Top 3 Cards -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch min-h-[400px]">
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">💳</span>
-                    </div>
-                    <h3 class="text-xl font-sf-pro font-bold text-finzo-blue mb-2">Virtual Debit Card</h3>
-                    <p class="text-gray-600 font-sf-pro">Get instant virtual cards for secure online transactions</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">📱</span>
-                    </div>
-                    <h3 class="text-xl font-sf-pro font-bold text-finzo-blue mb-2">UPI Payments</h3>
-                    <p class="text-gray-600 font-sf-pro">Seamless UPI transfers with instant notifications</p>
-                </div>
-                
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-2xl">💰</span>
-                    </div>
-                    <h3 class="text-xl font-sf-pro font-bold text-finzo-blue mb-2">Smart FDs</h3>
-                    <p class="text-gray-600 font-sf-pro">High-interest fixed deposits with flexible terms</p>
-                </div>
+            <!-- Left Phone Image -->
+            <div class="flex justify-start items-stretch h-full">
+              <img src="assets/3.svg" alt="Phone Mockups" class="h-full max-h-[400px] object-contain">
             </div>
+      
+            <!-- Center Scrollbar -->
+            <div class="hidden lg:flex justify-center items-stretch h-full">
+              <img src="assets/scrolltop.svg" alt="Top Scrollbar" class="h-full max-h-[400px]">
+            </div>
+      
+            <!-- Top 3 Cards -->
+            <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
+              <div class="bg-[#E8F0FE] rounded-2xl p-4 shadow-sm">
+                <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Digital Account</h3>
+                <p class="text-[#6e6e73] text-sm mt-1">
+                  Open your Digital account in minutes with video KYC. Zero paperwork maximum convenience
+                </p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm">
+                <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">UPI Payments</h3>
+                <p class="text-[#6e6e73] text-sm mt-1">
+                  Lightning fast UPI transactions. Pay anyone, anywhere, anytime with just a tap
+                </p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm">
+                <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Mobile Recharge</h3>
+                <p class="text-[#6e6e73] text-sm mt-1">
+                  Instant mobile and DTH recharge with exclusive cashback offers and rewards
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- ROW 2: Bottom 3 Cards + Scrollbar + Right Phone -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 items-stretch min-h-[400px]">
+            
+            <!-- Bottom 3 Cards -->
+            <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm">
+                <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Smart Fixed Deposits</h3>
+                <p class="text-[#6e6e73] text-sm mt-1">
+                  Grow your money with high interest FDs. Flexible tenures and easy premature withdrawal.
+                </p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm">
+                <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Agent Program</h3>
+                <p class="text-[#6e6e73] text-sm mt-1">
+                  Earn commissions by helping others join FinZo. Build your network and grow your income.
+                </p>
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm">
+                <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Bank level Security</h3>
+                <p class="text-[#6e6e73] text-sm mt-1">
+                  Multi-layer security with biometric authentication and real-time fraud detection.
+                </p>
+              </div>
+            </div>
+      
+            <!-- Bottom Scrollbar -->
+            <div class="hidden lg:flex justify-center items-stretch h-full">
+              <img src="assets/scrollbottom.svg" alt="Bottom Scrollbar" class="h-full max-h-[400px]">
+            </div>
+      
+            <!-- Right Phone -->
+            <div class="flex justify-end items-stretch h-full">
+              <img src="assets/landing.svg" alt="Phone Bottom Right" class="h-full max-h-[400px] object-contain">
+            </div>
+          </div>
         </div>
-    </section>
-
+      </section>
+      
+      
+      
+      
+      
+      
     <!-- App Section -->
     <section id="app" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
