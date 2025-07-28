@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinZo - Experience Seamless Banking</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=SF+Pro+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        'archivo': ['Archivo Black', 'sans-serif'],
                         'sf-pro': ['SF Pro Display', 'sans-serif']
                     },
                     colors: {
                         'finzo-green': '#296b25',
                         'finzo-blue': '#1c274c',
+                        'finzo-text': '#314F95',
                         'light-blue': '#f0f8ff'
                     }
                 }
@@ -25,204 +25,268 @@
     </script>
     <style>
         .grid-pattern {
-            background-image: 
-                linear-gradient(rgba(41, 107, 37, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(41, 107, 37, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-image: url('assets/bg.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
+        
+
     </style>
 </head>
-<body class="bg-light-blue grid-pattern min-h-screen">
+<body class=" min-h-screen">
     <!-- Navigation Bar -->
     <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
             <!-- Logo -->
-            <div class="text-2xl font-bold text-finzo-green font-archivo">
-                FinZo
+            <div class="text-2xl font-bold text-finzo-text font-sf-pro">
+                <img src="assets/logo.svg" alt="FinZo" class="h-8">
             </div>
             
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-8">
-                <a href="#features" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">Features</a>
-                <a href="#app" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">App</a>
-                <a href="#reviews" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">Reviews</a>
-                <a href="#faqs" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">FAQs</a>
-                <a href="#contact" class="text-finzo-blue font-sf-pro font-medium text-lg hover:text-finzo-green transition-colors">Contact</a>
+                <a href="#features" class="text-gray-800 font-sf-pro font-medium text-lg hover:text-finzo-text transition-colors">Features</a>
+                <a href="#app" class="text-gray-800 font-sf-pro font-medium text-lg hover:text-finzo-text transition-colors">App</a>
+                <a href="#reviews" class="text-gray-800 font-sf-pro font-medium text-lg hover:text-finzo-text transition-colors">Reviews</a>
+                <a href="#faqs" class="text-gray-800 font-sf-pro font-medium text-lg hover:text-finzo-text transition-colors">FAQs</a>
+                <a href="#contact" class="text-gray-800 font-sf-pro font-medium text-lg hover:text-finzo-text transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-16">
+     <div class="py-20"></div>
+    <section class="container mx-auto px-6 py-32 grid-pattern" style="background-size: 100% 100%; background-position: top center;">
+        <!-- Content and Grid Section -->
         <div class="flex flex-col lg:flex-row items-center justify-between">
             <!-- Left Content -->
             <div class="lg:w-1/2 mb-12 lg:mb-0">
                 <!-- Main Headline -->
-                <h1 class="text-5xl lg:text-6xl font-archivo font-normal leading-tight text-finzo-blue mb-6 tracking-wide">
+                <h1 class="text-5xl lg:text-6xl font-sf-pro font-normal leading-tight text-finzo-blue mb-6 tracking-wide">
                     Experience Seamless Banking with 
-                    <span class="text-finzo-green">FinZo</span>
+                    <span class="text-finzo-text">FinZo</span>
                 </h1>
                 
                 <!-- Description -->
                 <p class="text-xl text-gray-700 font-sf-pro font-normal leading-7 mb-8">
                     Experience seamless UPI payments, instant recharges, smart FDs, and earn through our agent program. Your financial journey starts here.
                 </p>
-                
-                <!-- Call-to-Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="bg-finzo-blue text-white px-8 py-4 rounded-lg font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-finzo-green transition-colors">
-                        Download FinZo
-                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-                    <button class="border-2 border-finzo-blue text-finzo-blue px-8 py-4 rounded-lg font-sf-pro font-bold text-lg hover:bg-finzo-blue hover:text-white transition-colors">
-                        Learn More
-                    </button>
-                </div>
             </div>
             
-            <!-- Right Content - Phone Mockups -->
-            <div class="lg:w-1/2 relative">
-                <div class="relative">
-                    <!-- Left Phone - Virtual Debit Card -->
-                    <div class="absolute -left-8 top-8 transform rotate-12">
-                        <div class="w-64 h-96 bg-black rounded-3xl p-2 shadow-2xl">
-                            <div class="w-full h-full bg-white rounded-2xl p-4">
-                                <h3 class="text-sm font-sf-pro font-medium text-gray-600 mb-4">VIRTUAL DEBIT CARD</h3>
-                                
-                                <!-- Card -->
-                                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 mb-4 relative">
-                                    <div class="w-12 h-8 bg-blue-500 rounded mb-2"></div>
-                                    <div class="text-sm font-sf-pro font-medium text-gray-700 mb-2">1234 5678 9101 1121</div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-xs text-gray-600">07/26</span>
-                                        <span class="text-xs font-bold text-blue-600">VISA</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card Controls -->
-                                <div class="space-y-2 mb-4">
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-xs text-gray-600">Change PIN</span>
-                                        <button class="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Change</button>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-xs text-gray-600">Block Card</span>
-                                        <button class="text-xs bg-red-100 text-red-600 px-2 py-1 rounded">Block</button>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-xs text-gray-600">Spending Limits</span>
-                                        <button class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded">Manage</button>
-                                    </div>
-                                </div>
-                                
-                                <!-- Card Details -->
-                                <div class="space-y-2">
-                                    <div class="flex justify-between">
-                                        <span class="text-xs text-gray-500">Card Number</span>
-                                        <span class="text-xs text-gray-700">•••• •••• •••• 1121</span>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <span class="text-xs text-gray-500">Expiry Date</span>
-                                        <span class="text-xs text-gray-700">07/26</span>
-                                    </div>
-                                    <div class="flex justify-between">
-                                        <span class="text-xs text-gray-500">CVV Number</span>
-                                        <span class="text-xs text-gray-700">•••</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Right Content - Empty for now -->
+            <div class="lg:w-1/2">
+                <!-- Empty space for future content -->
+            </div>
+        </div>
+        
+        <!-- Buttons Section -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-12">
+            <button class="bg-finzo-blue text-white px-8 py-4 rounded-full font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-finzo-text transition-colors">
+                Download FinZo
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+            <button class="bg-white text-finzo-blue px-8 py-4 rounded-full font-sf-pro font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300" style="box-shadow: 0 4px 20px rgba(49, 79, 149, 0.15);">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Why Choose FinZo?</h2>
+                <p class="text-xl text-gray-600 font-sf-pro">Experience the future of banking with our innovative features</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💳</span>
                     </div>
-                    
-                    <!-- Right Phone - App Home Screen -->
-                    <div class="absolute -right-8 top-16 transform -rotate-6">
-                        <div class="w-64 h-96 bg-black rounded-3xl p-2 shadow-2xl">
-                            <div class="w-full h-full bg-white rounded-2xl p-4">
-                                <!-- Header -->
-                                <div class="flex items-center justify-between mb-4">
-                                    <div>
-                                        <p class="text-xs text-gray-600">Good Morning,</p>
-                                        <p class="text-sm font-sf-pro font-medium text-gray-800">Aniket Anand</p>
-                                    </div>
-                                    <div class="w-8 h-8 bg-gray-300 rounded-full"></div>
-                                </div>
-                                
-                                <!-- Balance -->
-                                <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-4 mb-4 text-white">
-                                    <div class="flex justify-between items-center mb-2">
-                                        <span class="text-xs">Your Balance</span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                                        </svg>
-                                    </div>
-                                    <div class="text-xl font-sf-pro font-bold">₹ 75,987.45</div>
-                                    <div class="text-xs opacity-80">UPI ID: aniket@finzo</div>
-                                </div>
-                                
-                                <!-- Action Buttons -->
-                                <div class="flex gap-2 mb-4">
-                                    <button class="flex-1 bg-green-500 text-white py-2 rounded-lg text-xs font-sf-pro font-medium">Add Money</button>
-                                    <button class="flex-1 bg-blue-500 text-white py-2 rounded-lg text-xs font-sf-pro font-medium">Send Money</button>
-                                </div>
-                                
-                                <!-- Quick Actions -->
-                                <div class="grid grid-cols-4 gap-2 mb-4">
-                                    <div class="text-center">
-                                        <div class="w-8 h-8 bg-blue-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
-                                            <span class="text-xs text-blue-600">📱</span>
-                                        </div>
-                                        <span class="text-xs text-gray-600">Recharge</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <div class="w-8 h-8 bg-green-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
-                                            <span class="text-xs text-green-600">💳</span>
-                                        </div>
-                                        <span class="text-xs text-gray-600">Pay Bill</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <div class="w-8 h-8 bg-purple-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
-                                            <span class="text-xs text-purple-600">💰</span>
-                                        </div>
-                                        <span class="text-xs text-gray-600">Fixed Deposit</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <div class="w-8 h-8 bg-orange-100 rounded-lg mx-auto mb-1 flex items-center justify-center">
-                                            <span class="text-xs text-orange-600">📲</span>
-                                        </div>
-                                        <span class="text-xs text-gray-600">UPI</span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Promotional Banner -->
-                                <div class="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg p-3 mb-4">
-                                    <div class="text-xs font-sf-pro font-bold text-white mb-1">Get ₹500 Cashback</div>
-                                    <div class="text-xs text-white opacity-90 mb-2">On first FD of ₹10,000 or more</div>
-                                    <button class="bg-white text-orange-500 text-xs px-3 py-1 rounded font-sf-pro font-medium">Start FD</button>
-                                </div>
-                                
-                                <!-- Recent Transactions -->
-                                <div>
-                                    <div class="text-xs font-sf-pro font-medium text-gray-600 mb-2">Recent Transactions</div>
-                                    <div class="space-y-1">
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-xs text-gray-700">Amazon</span>
-                                            <span class="text-xs text-red-600">-₹1,299</span>
-                                        </div>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-xs text-gray-700">Salary</span>
-                                            <span class="text-xs text-green-600">+₹45,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="text-xl font-sf-pro font-bold text-finzo-blue mb-2">Virtual Debit Card</h3>
+                    <p class="text-gray-600 font-sf-pro">Get instant virtual cards for secure online transactions</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-sf-pro font-bold text-finzo-blue mb-2">UPI Payments</h3>
+                    <p class="text-gray-600 font-sf-pro">Seamless UPI transfers with instant notifications</p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <h3 class="text-xl font-sf-pro font-bold text-finzo-blue mb-2">Smart FDs</h3>
+                    <p class="text-gray-600 font-sf-pro">High-interest fixed deposits with flexible terms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Section -->
+    <section id="app" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-6">Download Our App</h2>
+                    <p class="text-xl text-gray-600 font-sf-pro mb-8">Get the FinZo app and experience seamless banking on the go. Available on both iOS and Android platforms.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-finzo-blue text-white px-8 py-4 rounded-full font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-finzo-text transition-colors">
+                            <span class="mr-2">📱</span>
+                            Download for iOS
+                        </button>
+                        <button class="bg-finzo-blue text-white px-8 py-4 rounded-full font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-finzo-text transition-colors">
+                            <span class="mr-2">🤖</span>
+                            Download for Android
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-center">
+                    <div class="w-64 h-96 bg-gray-200 rounded-3xl mx-auto flex items-center justify-center">
+                        <span class="text-4xl">📱</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">What Our Users Say</h2>
+                <p class="text-xl text-gray-600 font-sf-pro">Join thousands of satisfied customers</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-lg">👤</span>
+                        </div>
+                        <div>
+                            <h4 class="font-sf-pro font-bold text-finzo-blue">Rahul Sharma</h4>
+                            <p class="text-sm text-gray-600">Verified User</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 font-sf-pro">"FinZo has revolutionized my banking experience. The UPI payments are lightning fast!"</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-lg">👤</span>
+                        </div>
+                        <div>
+                            <h4 class="font-sf-pro font-bold text-finzo-blue">Priya Patel</h4>
+                            <p class="text-sm text-gray-600">Verified User</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 font-sf-pro">"The virtual debit card feature is amazing. I feel much safer shopping online now."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-lg">👤</span>
+                        </div>
+                        <div>
+                            <h4 class="font-sf-pro font-bold text-finzo-blue">Amit Kumar</h4>
+                            <p class="text-sm text-gray-600">Verified User</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 font-sf-pro">"Best banking app I've ever used. The interface is so intuitive and user-friendly."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 font-sf-pro">Find answers to common questions about FinZo</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-2">How do I create a FinZo account?</h3>
+                    <p class="text-gray-700 font-sf-pro">Download our app, provide your KYC details, and get your account activated within minutes.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-2">Is FinZo safe and secure?</h3>
+                    <p class="text-gray-700 font-sf-pro">Yes, we use bank-grade security protocols and are regulated by RBI. Your money is completely safe with us.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-2">What are the charges for UPI transfers?</h3>
+                    <p class="text-gray-700 font-sf-pro">UPI transfers are completely free with FinZo. No hidden charges or transaction fees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Get in Touch</h2>
+                <p class="text-xl text-gray-600 font-sf-pro">Have questions? We're here to help!</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-2xl">
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-4">Contact Information</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <span class="text-xl mr-3">📧</span>
+                                    <span class="font-sf-pro">support@finzo.com</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-xl mr-3">📞</span>
+                                    <span class="font-sf-pro">+91 1800-FINZO</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-xl mr-3">📍</span>
+                                    <span class="font-sf-pro">Mumbai, Maharashtra</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-4">Quick Links</h3>
+                            <div class="space-y-2">
+                                <a href="#" class="block text-gray-700 font-sf-pro hover:text-finzo-text">Privacy Policy</a>
+                                <a href="#" class="block text-gray-700 font-sf-pro hover:text-finzo-text">Terms of Service</a>
+                                <a href="#" class="block text-gray-700 font-sf-pro hover:text-finzo-text">Help Center</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="w-full bg-finzo-blue text-white py-4 rounded-full font-sf-pro font-bold text-lg hover:bg-finzo-text transition-colors">
+                        Contact Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-finzo-blue text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <img src="assets/logo.svg" alt="FinZo" class="h-8 mx-auto mb-4">
+                <p class="text-gray-300 font-sf-pro">© 2024 FinZo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html> 
