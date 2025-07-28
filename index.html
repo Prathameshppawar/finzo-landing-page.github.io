@@ -76,7 +76,7 @@
     <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
             <!-- Logo -->
-            <div class="text-2xl font-bold text-finzo-text font-sf-pro">
+            <div class="text-2xl font-bold text-finzo-text font-sf-pro m-5">
                 <img src="assets/logo.svg" alt="FinZo" class="h-8">
             </div>
             
@@ -517,44 +517,64 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <!-- Contact Form Section -->
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Get in Touch</h2>
-                <p class="text-xl text-gray-600 font-sf-pro">Have questions? We're here to help!</p>
+                <p class="text-xl text-gray-600 font-sf-pro">Have questions or need support? We're here to help!</p>
             </div>
             
-            <div class="max-w-2xl mx-auto">
-                <div class="bg-gray-50 p-8 rounded-2xl">
-                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <!-- Contact Form -->
+            <div class="max-w-2xl mx-auto mb-20">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                    <form class="space-y-6">
                         <div>
-                            <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-4">Contact Information</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center">
-                                    <span class="text-xl mr-3">📧</span>
-                                    <span class="font-sf-pro">support@finzo.com</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="text-xl mr-3">📞</span>
-                                    <span class="font-sf-pro">+91 1800-FINZO</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <span class="text-xl mr-3">📍</span>
-                                    <span class="font-sf-pro">Mumbai, Maharashtra</span>
-                                </div>
-                            </div>
+                            <label for="name" class="block text-sm font-sf-pro font-medium text-gray-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-finzo-text focus:border-transparent font-sf-pro">
                         </div>
+                        
                         <div>
-                            <h3 class="text-lg font-sf-pro font-bold text-finzo-blue mb-4">Quick Links</h3>
-                            <div class="space-y-2">
-                                <a href="#" class="block text-gray-700 font-sf-pro hover:text-finzo-text">Privacy Policy</a>
-                                <a href="#" class="block text-gray-700 font-sf-pro hover:text-finzo-text">Terms of Service</a>
-                                <a href="#" class="block text-gray-700 font-sf-pro hover:text-finzo-text">Help Center</a>
-                            </div>
+                            <label for="email" class="block text-sm font-sf-pro font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-finzo-text focus:border-transparent font-sf-pro">
                         </div>
-                    </div>
-                    <button class="w-full bg-finzo-blue text-white py-4 rounded-full font-sf-pro font-bold text-lg hover:bg-finzo-text transition-colors">
-                        Contact Support
-                    </button>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-sf-pro font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-finzo-text focus:border-transparent font-sf-pro">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-sf-pro font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us more about your enquiry" 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-finzo-text focus:border-transparent font-sf-pro resize-none"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="bg-finzo-text text-white px-8 py-4 rounded-2xl w-full font-sf-pro font-bold text-lg hover:bg-finzo-blue transition-colors">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- App Download Section -->
+            <div class="text-center">
+                <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Ready to get started?</h2>
+                <p class="text-xl text-gray-600 font-sf-pro mb-8">Join millions of users who trust FinZo for their everyday banking. Download now and get your account ready in minutes.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <!-- <a href="#" class="bg-black text-white px-8 py-4 rounded-full font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-gray-800 transition-colors"> -->
+                        <img src="assets/app-store.svg" alt="App Store" class="h-20 m-8">
+                        <!-- Download on the App Store -->
+                    <!-- </a> -->
+                    <!-- <a href="#" class="bg-black text-white px-8 py-4 rounded-full font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-gray-800 transition-colors"> -->
+                        <img src="assets/play-store.svg" alt="Google Play" class="h-20 m-8">
+                        <!-- GET IT ON Google Play -->
+                    <!-- </a> -->
                 </div>
             </div>
         </div>
