@@ -91,6 +91,8 @@
         
 
         
+
+        
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             .hero-headline {
@@ -119,6 +121,83 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            
+                    /* Mobile carousel adjustments */
+        .carousel-container {
+            width: 100% !important;
+        }
+        
+        .carousel-dots {
+            width: 100% !important;
+            justify-content: center !important;
+        }
+        
+        /* Smooth carousel animations */
+        #carousel-container {
+            transition: scroll-left 1s ease-in-out;
+            scroll-behavior: smooth;
+        }
+        
+        #carousel-container img {
+            transition: all 0.3s ease-in-out;
+        }
+        }
+        
+        /* Tablet Responsive Styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-headline {
+                font-size: 3.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Tablet Responsive Styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-headline {
+                font-size: 3.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Logo Text Styles */
+        .logo-container {
+            font-size: 1.875rem !important; /* 3xl */
+            line-height: 2.25rem !important;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-container {
+                font-size: 2.25rem !important; /* 4xl */
+                line-height: 2.5rem !important;
+            }
+        }
+        
+        /* Fade Animation Styles */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
 
@@ -129,8 +208,8 @@
     <nav class="container mx-auto px-6 ">
         <div class="flex justify-between items-center">
             <!-- Logo -->
-            <div class="text-2xl font-bold text-finzo-text font-sf-pro m-5">
-                <img src="assets/logo.svg" alt="FinZo" class="h-8">
+            <div class="text-3xl md:text-6xl font-bold text-finzo-text font-sf-pro m-5 logo-container">
+                <span class="text-finzo-text">FinZo</span>
             </div>
             
             <!-- Navigation Links -->
@@ -167,14 +246,14 @@
 
     <!-- Hero Section -->
      <!-- <div class="py-20"></div> -->
-    <section class="min-h-screen flex items-center" style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%); background-size: 100% 100%; background-position: top center;">
-        <div class="container mx-auto px-6">
+    <section class="min-h-screen flex items-center fade-in" style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%); background-size: 100% 100%; background-position: top center;">
+        <div class="container mx-auto px-6 md:px-8 lg:px-12">
         <!-- Content and Grid Section -->
-        <div class="flex flex-col lg:flex-row grid-pattern items-center justify-between">
+        <div class="flex flex-col lg:flex-row grid-pattern items-start justify-between">
             <!-- Left Content -->
-            <div class="lg:w-1/2 mb-12 lg:mb-0">
+            <div class="lg:w-1/2 mb-12 lg:mb-0 flex flex-col justify-center">
                 <!-- Main Headline -->
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-sf-pro font-bold leading-tight text-finzo-blue m-5 tracking-wide hero-headline">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-sf-pro font-bold leading-tight text-finzo-blue tracking-wide hero-headline">
                     <p>Experience</p>
                     <p>Seamless Banking </p>  
                     <span>with</span>
@@ -182,7 +261,7 @@
                 </h1>
                 
                 <!-- Description -->
-                <div class="text-lg md:text-xl text-gray-700 font-sf-pro font-normal leading-7 mb-8 ml-5 hero-description">
+                <div class="text-lg md:text-xl text-gray-700 font-sf-pro font-normal leading-7 mb-8 hero-description">
                     <p>
                         Experience seamless UPI payments, instant recharges,
                     </p> 
@@ -193,7 +272,7 @@
                 </div>
                 
                 <!-- Buttons Section -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start ml-5 mb-8">
+                <div class="flex flex-col sm:flex-row gap-4 justify-start mb-8">
                     <button class="bg-finzo-text text-white px-8 py-4 rounded-2xl font-sf-pro font-bold text-lg flex items-center justify-center hover:bg-finzo-blue transition-colors">
                         Download FinZo
                         <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -207,7 +286,7 @@
             </div>
             
             <!-- Right Content - Phone Image -->
-            <div class="lg:w-1/2 flex justify-end items-start">
+            <div class="lg:w-1/2 flex justify-end items-center">
                 <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Hero.png" alt="" class="h-auto max-h-[500px] object-contain">
             </div>
         </div>
@@ -243,7 +322,7 @@
                 </div>
                 
             <!-- Top 3 Cards -->
-                        <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
+                        <div class="flex flex-col justify-between gap-4 h-full min-h-[400px] w-full">
               <div class="bg-[#E8F0FE] rounded-2xl p-4 shadow-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(0)" id="feature-card-0">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Digital Account</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
@@ -269,20 +348,20 @@
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 items-stretch min-h-[400px]">
             
             <!-- Bottom 3 Cards -->
-                        <div class="flex flex-col justify-between gap-4 h-full min-h-[400px]">
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(3)" id="feature-card-3">
+                        <div class="flex flex-col justify-between gap-4 h-full min-h-[400px] w-full">
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(3)" id="feature-card-3">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Smart Fixed Deposits</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Grow your money with high interest FDs. Flexible tenures and easy premature withdrawal.
                 </p>
               </div>
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(4)" id="feature-card-4">
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(4)" id="feature-card-4">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Agent Program</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Earn commissions by helping others join FinZo. Build your network and grow your income.
                 </p>
-                    </div>
-              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm max-w-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(5)" id="feature-card-5">
+              </div>
+              <div class="bg-white rounded-2xl p-4 border border-[#D9D9D9] shadow-sm cursor-pointer hover:shadow-md transition-all" onclick="toggleFeatureCard(5)" id="feature-card-5">
                 <h3 class="text-lg font-bold text-[#1c1c1e] font-sf-pro">Bank level Security</h3>
                 <p class="text-[#6e6e73] text-sm mt-1">
                   Multi-layer security with biometric authentication and real-time fraud detection.
@@ -311,7 +390,7 @@
       
       
     <!-- App Section -->
-    <section id="app" class="py-20" style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%);">
+    <section id="app" class="py-20 fade-in" style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%);">
         <div class="container mx-auto px-6 max-w-7xl">
             <!-- Section Header -->
             <div class="text-center mb-16">
@@ -328,30 +407,27 @@
             <!-- Phone Screens Carousel -->
             <div class="relative">
                 <!-- Phone Screens Container -->
-                                <div class="flex justify-center items-center space-x-2 md:space-x-4 overflow-hidden pb-8" id="carousel-container">
-                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-1.png" alt="App Screen 1" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-2.png" alt="App Screen 2" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-3.png" alt="App Screen 3" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-100 opacity-100">
-                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-4.png" alt="App Screen 4" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-5.png" alt="App Screen 5" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-6.png" alt="App Screen 6" class="w-32 h-48 md:w-64 md:h-96 object-contain transition-transform duration-300 transform scale-90 opacity-70">
-                    </div>
-                
-                <!-- Carousel Dots -->
-                <div class="flex justify-center space-x-2 mt-8">
-                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="goToSlide(0)"></div>
-                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="goToSlide(1)"></div>
-                    <div class="w-3 h-3 bg-finzo-text rounded-full cursor-pointer" onclick="goToSlide(2)"></div>
-                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="goToSlide(3)"></div>
-                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="goToSlide(4)"></div>
-                    <div class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer" onclick="goToSlide(5)"></div>
+                <div class="flex space-x-4 md:space-x-6 overflow-hidden pb-8 w-full" id="carousel-container">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-1.png" alt="App Screen 1" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-2.png" alt="App Screen 2" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-3.png" alt="App Screen 3" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-4.png" alt="App Screen 4" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-5.png" alt="App Screen 5" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-6.png" alt="App Screen 6" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <!-- Duplicate images for infinite loop -->
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-1.png" alt="App Screen 1" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-2.png" alt="App Screen 2" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-3.png" alt="App Screen 3" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-4.png" alt="App Screen 4" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-5.png" alt="App Screen 5" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
+                    <img src="https://finzo-docs.s3.us-east-1.amazonaws.com/Screen-6.png" alt="App Screen 6" class="w-64 h-96 md:w-64 md:h-96 object-contain flex-shrink-0">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews" class="py-20 bg-white">
+    <section id="reviews" class="py-20 bg-white fade-in">
         <div class="container mx-auto px-6 max-w-7xl">
             <!-- Header -->
             <div class="text-center mb-16">
@@ -361,7 +437,7 @@
             </div>
             
             <!-- Testimonial Cards Grid -->
-            <div class="grid md:grid-cols-3 gap-6 testimonial-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 testimonial-grid">
                 <!-- Card 1 -->
                 <div class="bg-[#E8F0FE] p-6 rounded-2xl relative">
                     <div class="flex justify-between items-start mb-3">
@@ -510,7 +586,7 @@
     </section>
 
     <!-- FAQs Section -->
-    <section id="faqs" class="py-20" style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%);">
+    <section id="faqs" class="py-20 fade-in" style="background: linear-gradient(to bottom, white 0%, #E8F0FE 100%);">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Frequently Asked Questions</h2>
@@ -601,7 +677,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-white fade-in">
         <div class="container mx-auto px-6 max-w-4xl">
             <!-- Contact Form Section -->
             <div class="text-center mb-16">
@@ -652,13 +728,13 @@
                 <h2 class="text-4xl font-sf-pro font-bold text-finzo-blue mb-4">Ready to get started?</h2>
                 <p class="text-xl text-gray-600 font-sf-pro mb-8">Join millions of users who trust FinZo for their everyday banking. Download now and get your account ready in minutes.</p>
                 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <div class="flex flex-row gap-4 justify-center">
                     <a href="#" >
-                        <img src="assets/app-store.svg" alt="App Store" class="h-20 m-8">
+                        <img src="assets/app-store.svg" alt="App Store" class="h-16 md:h-20">
                         <!-- Download on the App Store -->
                     </a>
                     <a href="#" >
-                        <img src="assets/play-store.svg" alt="Google Play" class="h-20 m-8">
+                        <img src="assets/play-store.svg" alt="Google Play" class="h-16 md:h-20">
                         <!-- GET IT ON Google Play -->
                     </a>
                 </div>
@@ -667,7 +743,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-16" style="background: #E8F0FE;">
+    <footer class="py-16 fade-in" style="background: #E8F0FE;">
         <div class="container mx-auto px-6 max-w-7xl">
             <div class="grid grid-cols-1 md:grid-cols-5 gap-8 footer-grid">
                 <!-- Column 1: FinZo Branding and Social Media -->
@@ -754,52 +830,50 @@
 
     <script>
         // Carousel functionality
-        let currentSlide = 2; // Start with center slide
+        let currentSlide = 0; // Start with first slide
         const slides = document.querySelectorAll('#carousel-container img');
-        const dots = document.querySelectorAll('#carousel-container + div div');
+        const carouselContainer = document.getElementById('carousel-container');
+        const originalSlidesCount = 6; // Number of original slides
+        let autoScrollInterval;
         
-        function updateCarousel() {
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.remove('scale-90', 'opacity-70');
-                    slide.classList.add('scale-100', 'opacity-100');
+        function startAutoScroll() {
+            // Auto scroll for all devices
+            autoScrollInterval = setInterval(() => {
+                const slideWidth = slides[0].offsetWidth + 16; // width + margin
+                const currentScroll = carouselContainer.scrollLeft;
+                const totalWidth = slideWidth * originalSlidesCount;
+                
+                // If at the end, loop back to start
+                if (currentScroll >= totalWidth) {
+                    carouselContainer.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
                 } else {
-                    slide.classList.remove('scale-100', 'opacity-100');
-                    slide.classList.add('scale-90', 'opacity-70');
+                    carouselContainer.scrollTo({
+                        left: currentScroll + slideWidth,
+                        behavior: 'smooth'
+                    });
                 }
-            });
-            
-            dots.forEach((dot, index) => {
-                if (index === currentSlide) {
-                    dot.classList.remove('bg-gray-300');
-                    dot.classList.add('bg-finzo-text');
-                } else {
-                    dot.classList.remove('bg-finzo-text');
-                    dot.classList.add('bg-gray-300');
-                }
-            });
+            }, 2000); // Scroll every 2 seconds with smooth transition 
         }
         
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
+        function stopAutoScroll() {
+            if (autoScrollInterval) {
+                clearInterval(autoScrollInterval);
+            }
         }
         
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateCarousel();
-        }
+        // Start auto-scroll
+        startAutoScroll();
         
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            updateCarousel();
-        }
+        // Pause auto-scroll on hover (all devices)
+        carouselContainer.addEventListener('mouseenter', stopAutoScroll);
+        carouselContainer.addEventListener('mouseleave', startAutoScroll);
         
-        // Auto-advance carousel every 3 seconds
-        setInterval(nextSlide, 3000);
-        
-        // Initialize carousel
-        updateCarousel();
+        // Pause auto-scroll on touch (mobile/tablet)
+        carouselContainer.addEventListener('touchstart', stopAutoScroll);
+        carouselContainer.addEventListener('touchend', startAutoScroll);
         
         // Mobile Menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -869,53 +943,61 @@
         function updateScrollProgress() {
             const scrollTop = window.pageYOffset;
             const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
             
-            // Calculate scroll percentage
-            const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-            
-            // Update progress bars based on active card
-            const progressBarTop = document.getElementById('progress-bar-top');
-            const progressBarBottom = document.getElementById('progress-bar-bottom');
-            
-            if (progressBarTop && progressBarBottom) {
-                // Get the currently active card from the card highlighting logic
-                const featuresSection = document.getElementById('features');
-                if (featuresSection) {
-                    const sectionTop = featuresSection.offsetTop;
-                    const sectionHeight = featuresSection.offsetHeight;
-                    const windowHeight = window.innerHeight;
-                    const centerY = scrollTop + (windowHeight / 2);
-                    
-                    // Check if we're in the features section
-                    if (centerY >= sectionTop && centerY <= sectionTop + sectionHeight) {
-                        // Get all feature cards to find which one is active
-                        const cards = [];
-                        for (let i = 0; i < 6; i++) {
-                            const card = document.getElementById(`feature-card-${i}`);
-                            if (card) {
-                                const cardTop = card.offsetTop;
-                                const cardHeight = card.offsetHeight;
-                                const cardCenter = cardTop + (cardHeight / 2);
-                                
-                                // Check if card center is near viewport center
-                                const distanceFromCenter = Math.abs(centerY - cardCenter);
-                                const threshold = windowHeight / 3; // Tolerance zone
-                                
-                                if (distanceFromCenter < threshold) {
-                                    cards.push({ index: i, distance: distanceFromCenter });
-                                }
+            // Highlight feature cards based on scroll position
+            const featuresSection = document.getElementById('features');
+            if (featuresSection) {
+                const sectionTop = featuresSection.offsetTop;
+                const sectionHeight = featuresSection.offsetHeight;
+                const centerY = scrollTop + (windowHeight / 2);
+                
+                // Check if we're in the features section
+                if (centerY >= sectionTop && centerY <= sectionTop + sectionHeight) {
+                    // Get all feature cards
+                    const cards = [];
+                    for (let i = 0; i < 6; i++) {
+                        const card = document.getElementById(`feature-card-${i}`);
+                        if (card) {
+                            const cardTop = card.offsetTop;
+                            const cardHeight = card.offsetHeight;
+                            const cardCenter = cardTop + (cardHeight / 2);
+                            
+                            // Check if card center is near viewport center
+                            const distanceFromCenter = Math.abs(centerY - cardCenter);
+                            const threshold = windowHeight / 2; // Increased tolerance zone
+                            
+                            if (distanceFromCenter < threshold) {
+                                cards.push({ index: i, distance: distanceFromCenter });
                             }
                         }
-                        
-                        // Find the active card
-                        let activeCard = 0;
-                        if (cards.length > 0) {
-                            cards.sort((a, b) => a.distance - b.distance);
-                            activeCard = cards[0].index;
+                    }
+                    
+                    // Find the card closest to center
+                    let activeCard = 0;
+                    if (cards.length > 0) {
+                        cards.sort((a, b) => a.distance - b.distance);
+                        activeCard = cards[0].index;
+                    }
+                    
+                    // Update card highlighting
+                    for (let i = 0; i < 6; i++) {
+                        const card = document.getElementById(`feature-card-${i}`);
+                        if (card) {
+                            if (i === activeCard) {
+                                card.classList.remove('bg-white', 'border', 'border-[#D9D9D9]');
+                                card.classList.add('bg-[#E8F0FE]');
+                            } else {
+                                card.classList.remove('bg-[#E8F0FE]');
+                                card.classList.add('bg-white', 'border', 'border-[#D9D9D9]');
+                            }
                         }
-                        
-                        // Position bar based on active card
+                    }
+                    
+                    // Update progress bars based on active card
+                    const progressBarTop = document.getElementById('progress-bar-top');
+                    const progressBarBottom = document.getElementById('progress-bar-bottom');
+                    
+                    if (progressBarTop && progressBarBottom) {
                         if (activeCard < 3) {
                             // First 3 cards - use top bar
                             const position = (activeCard / 2) * 66; // 0%, 33%, 66%
@@ -931,60 +1013,13 @@
                             progressBarBottom.style.display = 'block';
                             progressBarTop.style.display = 'none';
                         }
-                    } else {
-                        // Outside features section - reset bars
-                        progressBarTop.style.display = 'none';
-                        progressBarBottom.style.display = 'none';
                     }
-                }
-            }
-            
-            // Highlight feature cards based on scroll position
-            const featuresSection = document.getElementById('features');
-            if (featuresSection) {
-                const sectionTop = featuresSection.offsetTop;
-                const sectionHeight = featuresSection.offsetHeight;
-                const windowHeight = window.innerHeight;
-                const centerY = scrollTop + (windowHeight / 2);
-                
-                // Get all feature cards
-                const cards = [];
-                for (let i = 0; i < 6; i++) {
-                    const card = document.getElementById(`feature-card-${i}`);
-                    if (card) {
-                        const cardTop = card.offsetTop;
-                        const cardHeight = card.offsetHeight;
-                        const cardCenter = cardTop + (cardHeight / 2);
-                        
-                        // Check if card center is near viewport center
-                        const distanceFromCenter = Math.abs(centerY - cardCenter);
-                        const threshold = windowHeight / 3; // Tolerance zone
-                        
-                        if (distanceFromCenter < threshold) {
-                            cards.push({ index: i, distance: distanceFromCenter });
-                        }
-                    }
-                }
-                
-                // Find the card closest to center
-                let activeCard = 0;
-                if (cards.length > 0) {
-                    cards.sort((a, b) => a.distance - b.distance);
-                    activeCard = cards[0].index;
-                }
-                
-                // Update card highlighting
-                for (let i = 0; i < 6; i++) {
-                    const card = document.getElementById(`feature-card-${i}`);
-                    if (card) {
-                        if (i === activeCard) {
-                            card.classList.remove('bg-white', 'border', 'border-[#D9D9D9]');
-                            card.classList.add('bg-[#E8F0FE]');
-                        } else {
-                            card.classList.remove('bg-[#E8F0FE]');
-                            card.classList.add('bg-white', 'border', 'border-[#D9D9D9]');
-                        }
-                    }
+                } else {
+                    // Outside features section - reset bars
+                    const progressBarTop = document.getElementById('progress-bar-top');
+                    const progressBarBottom = document.getElementById('progress-bar-bottom');
+                    if (progressBarTop) progressBarTop.style.display = 'none';
+                    if (progressBarBottom) progressBarBottom.style.display = 'none';
                 }
             }
         }
@@ -992,8 +1027,41 @@
         // Add scroll event listener
         window.addEventListener('scroll', updateScrollProgress);
         
+        // Debug: Check if elements exist
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Features section:', document.getElementById('features'));
+            console.log('Progress bar top:', document.getElementById('progress-bar-top'));
+            console.log('Progress bar bottom:', document.getElementById('progress-bar-bottom'));
+            for (let i = 0; i < 6; i++) {
+                console.log(`Feature card ${i}:`, document.getElementById(`feature-card-${i}`));
+            }
+        });
+        
         // Initialize progress on page load
-        document.addEventListener('DOMContentLoaded', updateScrollProgress);
+        document.addEventListener('DOMContentLoaded', function() {
+            updateScrollProgress();
+            
+            // Fade animation functionality
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        // Remove visible class when section goes out of view
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, {
+                threshold: 0.3, // Trigger when 30% of element is visible
+                rootMargin: '0px 0px -100px 0px' // Trigger when more content is visible
+            });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+        });
         
 
     </script>
