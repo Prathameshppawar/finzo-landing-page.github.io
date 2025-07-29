@@ -1048,10 +1048,8 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                    } else {
-                        // Remove visible class when section goes out of view
-                        entry.target.classList.remove('visible');
                     }
+                    // Removed else condition to prevent continuous fade in/out
                 });
             }, {
                 threshold: 0.3, // Trigger when 30% of element is visible
