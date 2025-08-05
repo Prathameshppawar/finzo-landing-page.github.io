@@ -33,6 +33,7 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;700&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -686,8 +687,7 @@
             <!-- Contact Form -->
             <div class="max-w-2xl mx-auto mb-20">
                 <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100" style="box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
-                                        <form class="space-y-6" name="contact" method="POST" netlify>
-                        <input type="hidden" name="form-name" value="contact" />
+                    <form id="contactForm" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-sf-pro font-medium text-gray-700 mb-2">Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your full name" required
@@ -713,13 +713,23 @@
                         </div>
                         
                         <div class="text-center">
-                            <button type="submit" class="bg-finzo-text text-white px-8 py-4 rounded-2xl w-full font-sf-pro font-bold text-lg hover:bg-finzo-blue transition-colors">
+                            <button type="submit" id="submitBtn" class="bg-finzo-text text-white px-8 py-4 rounded-2xl w-full font-sf-pro font-bold text-lg hover:bg-finzo-blue transition-colors">
                                 Send Message
                             </button>
                         </div>
-                    </form>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="formMessage" class="hidden mt-4 p-4 rounded-lg text-center font-sf-pro">
+                            <div id="successMessage" class="hidden text-green-700 bg-green-100 border border-green-200">
+                                <p>Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+                            </div>
+                            <div id="errorMessage" class="hidden text-red-700 bg-red-100 border border-red-200">
+                                <p id="errorText">Something went wrong. Please try again later.</p>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                </div>
+            </div>
             
             <!-- App Download Section -->
             <div class="text-center">
@@ -1067,6 +1077,122 @@
             
             fadeElements.forEach(element => {
                 fadeObserver.observe(element);
+            });
+            
+            // Contact Form Submission
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+            
+            // Test backend connectivity on page load
+            const backendUrl = 'https://finzo-dev.onrender.com';
+            console.log('Testing backend connectivity to:', backendUrl);
+            
+            fetch(`${backendUrl}/api/contact/submit`, {
+                method: 'OPTIONS'
+            }).then(response => {
+                console.log('Backend connectivity test - Status:', response.status);
+                console.log('Backend connectivity test - Headers:', response.headers);
+            }).catch(error => {
+                console.error('Backend connectivity test failed:', error);
+            });
+            
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const message = formData.get('message');
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.classList.add('opacity-50');
+                
+                // Hide any previous messages
+                formMessage.classList.add('hidden');
+                successMessage.classList.add('hidden');
+                errorMessage.classList.add('hidden');
+                
+                try {
+                    // Prepare request body
+                    const requestBody = {
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        message: message,
+                        subject: "Website Concern",
+                        category: "support",
+                        priority: "medium",
+                        source: "website"
+                    };
+                    
+                    // Hardcoded backend URL
+                    const backendUrl = 'https://finzo-dev.onrender.com'
+                    
+                    console.log('Backend URL:', backendUrl);
+                    console.log('Request body:', requestBody);
+                    
+                    // Send request to backend with timeout
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                    
+                    const response = await fetch(`${backendUrl}/api/contact/submit`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(requestBody),
+                        signal: controller.signal
+                    });
+                    
+                    clearTimeout(timeoutId);
+                    
+                    console.log('Response status:', response.status);
+                    console.log('Response headers:', response.headers);
+                    
+                    if (response.ok) {
+                        // Success
+                        successMessage.classList.remove('hidden');
+                        formMessage.classList.remove('hidden');
+                        contactForm.reset();
+                    } else {
+                        // Error
+                        const errorData = await response.json().catch(() => ({}));
+                        console.log('Error response:', errorData);
+                        errorText.textContent = errorData.message || `Server error (${response.status}). Please try again.`;
+                        errorMessage.classList.remove('hidden');
+                        formMessage.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    // Network or other error
+                    console.error('Form submission error:', error);
+                    console.error('Error details:', {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    });
+                    
+                    if (error.name === 'AbortError') {
+                        errorText.textContent = 'Request timeout. The server is taking too long to respond. Please try again.';
+                    } else {
+                        errorText.textContent = `Network error: ${error.message}. Please check your connection and try again.`;
+                    }
+                    
+                    errorMessage.classList.remove('hidden');
+                    formMessage.classList.remove('hidden');
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    submitBtn.classList.remove('opacity-50');
+                }
             });
         });
         
