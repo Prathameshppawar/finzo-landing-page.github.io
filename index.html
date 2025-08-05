@@ -1087,18 +1087,7 @@
             const errorMessage = document.getElementById('errorMessage');
             const errorText = document.getElementById('errorText');
             
-            // Test backend connectivity on page load
-            const backendUrl = 'https://finzo-dev.onrender.com';
-            console.log('Testing backend connectivity to:', backendUrl);
-            
-            fetch(`${backendUrl}/api/contact/submit`, {
-                method: 'OPTIONS'
-            }).then(response => {
-                console.log('Backend connectivity test - Status:', response.status);
-                console.log('Backend connectivity test - Headers:', response.headers);
-            }).catch(error => {
-                console.error('Backend connectivity test failed:', error);
-            });
+
             
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
