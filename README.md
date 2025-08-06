@@ -133,4 +133,3 @@ finzo-landing-page/
 This project is created for FinZo digital banking platform. 
 
 
-// fixing favicons and login redirections
