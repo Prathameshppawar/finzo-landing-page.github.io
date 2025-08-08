@@ -2,7 +2,7 @@
 
 A modern, responsive landing page for FinZo - a digital banking platform. Built with HTML, Tailwind CSS, and vanilla JavaScript.
 
-## 🚀 Features
+## 🚀 Features 
 
 ### Complete Landing Page Sections:
 - **Hero Section** - Gradient background with compelling headline and call-to-action buttons
@@ -131,3 +131,5 @@ finzo-landing-page/
 ## 📄 License
 
 This project is created for FinZo digital banking platform. 
+
+
